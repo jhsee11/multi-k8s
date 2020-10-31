@@ -18,6 +18,7 @@ env:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - docker build -t seejiahao/react-test -f ./client/Dockerfile.dev ./client
 
+
   script:
     - docker run -e CI=true seejiahao/react-test npm test
 
