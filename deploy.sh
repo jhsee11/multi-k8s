@@ -11,6 +11,7 @@ docker push seejiahao/multi-client:$SHA
 docker push seejiahao/multi-server:$SHA
 docker push seejiahao/multi-worker:$SHA
 
+
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=seejiahao/multi-server:$SHA
 kubectl set image deployments/client-deployment client=seejiahao/multi-client:$SHA
